@@ -9,14 +9,14 @@ MongoClient.connect('mongodb://localhost:27017/todoapp',(err,client)=>{
   console.log('connected to server');
 const db=client.db('todoapp');
 db.collection('users').insertOne({
-  name:'kartik mittal',
+  name:'kartik',
   age:18
 },(err,result)=>{
   if(err){
     return console.log('unable to add user');
   }
-  console.log(result.ops[0]._id.getTimestamp());
-})
+  console.log(result);
+});
 //   db.collection('Todos').insertOne({
 //     text:'something to do',
 //     completed:false
